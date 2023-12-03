@@ -9,7 +9,7 @@
     <meta name="description" content="My SetupI’ve chosen CLion as my weapon of choice for this project, thanks to its slick built-in MISRA C support (we’ll dig into that later). Currently, I’m cruising on my Dell G15 5515 Ryzen edition,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day1:-ESP-IDF set up for a project">
-<meta property="og:url" content="http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/index.html">
+<meta property="og:url" content="http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/index.html">
 <meta property="og:site_name" content="Dev&#39;s Blog">
 <meta property="og:description" content="My SetupI’ve chosen CLion as my weapon of choice for this project, thanks to its slick built-in MISRA C support (we’ll dig into that later). Currently, I’m cruising on my Dell G15 5515 Ryzen edition,">
 <meta property="og:locale" content="en_US">
@@ -22,17 +22,17 @@
     
       
         
-          <link rel="shortcut icon" href="/project/images/dev-logo.ico">
+          <link rel="shortcut icon" href="/images/dev-logo.ico">
         
       
       
         
-          <link rel="icon" type="image/png" href="/project/images/dev-logo.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/images/dev-logo.png" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/project/images/dev-logo.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/dev-logo.png">
         
       
     
@@ -47,7 +47,7 @@
 
     <!-- styles -->
     
-<link rel="stylesheet" href="/project/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
     <!-- persian styles -->
     
@@ -68,15 +68,15 @@
     <span id="nav">
       <ul>
         <!--
-       --><li><a href="/project/">Home</a></li><!--
+       --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/project/about/">About</a></li><!--
+       --><li><a href="/about/">About</a></li><!--
      --><!--
-       --><li><a href="/project/archives/">Writing</a></li><!--
+       --><li><a href="/archives/">Writing</a></li><!--
      --><!--
        --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
      --><!--
-       --><li><a href="/project/cv/CVDevManek.pdf">CV</a></li><!--
+       --><li><a href="/cv/CVDevManek.pdf">CV</a></li><!--
      -->
       </ul>
     </span>
@@ -96,17 +96,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -199,15 +199,15 @@
     <div id="nav-footer" style="display: none">
       <ul>
         
-          <li><a href="/project/">Home</a></li>
+          <li><a href="/">Home</a></li>
         
-          <li><a href="/project/about/">About</a></li>
+          <li><a href="/about/">About</a></li>
         
-          <li><a href="/project/archives/">Writing</a></li>
+          <li><a href="/archives/">Writing</a></li>
         
           <li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li>
         
-          <li><a href="/project/cv/CVDevManek.pdf">CV</a></li>
+          <li><a href="/cv/CVDevManek.pdf">CV</a></li>
         
       </ul>
     </div>
@@ -221,17 +221,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -261,15 +261,15 @@
     <nav>
       <ul>
         <!--
-       --><li><a href="/project/">Home</a></li><!--
+       --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/project/about/">About</a></li><!--
+       --><li><a href="/about/">About</a></li><!--
      --><!--
-       --><li><a href="/project/archives/">Writing</a></li><!--
+       --><li><a href="/archives/">Writing</a></li><!--
      --><!--
        --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
      --><!--
-       --><li><a href="/project/cv/CVDevManek.pdf">CV</a></li><!--
+       --><li><a href="/cv/CVDevManek.pdf">CV</a></li><!--
      -->
       </ul>
     </nav>
@@ -317,7 +317,7 @@
   </script>
 
 
-<script src="/project/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 <!-- search -->
 
