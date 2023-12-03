@@ -339,13 +339,13 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 body h3 {
   color: #eee;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 body h4,
 body h5,
@@ -507,7 +507,7 @@ body {
   -ms-hyphens: manual;
   -webkit-hyphens: manual;
 }
-.content a {
+.content az {
   color: #c9cacc;
   text-decoration: none;
   background-image: linear-gradient(transparent, transparent 5px, #c9cacc 5px, #c9cacc);
@@ -515,7 +515,7 @@ body {
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
-.content a:hover {
+.content az:hover {
   background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
 }
 .content a.icon {
@@ -615,13 +615,11 @@ body {
   display: inline-block;
   float: left;
   margin-right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 5px;
-  background-size: 50px 50px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
 }
 #header #nav {
   color: #2bbc8a;
@@ -663,15 +661,11 @@ body {
 #header #nav ul li:last-child a {
   margin-right: 0;
 }
-#header:hover #logo {
-  filter: none;
-  -webkit-filter: none;
-}
 @media screen and (max-width: 480px) {
   #header #title {
     display: table;
     margin-right: 5rem;
-    min-height: 50px;
+    min-height: 70px;
   }
   #header #title h1 {
     display: table-cell;
@@ -701,7 +695,7 @@ body {
   }
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
-    padding-left: 70px;
+    padding-left: 90px;
     font-size: 1rem;
   }
 }
@@ -1517,67 +1511,67 @@ article .content .caption {
   content: ")";
 }
 .highlight {
-  background: #474949;
-  color: #d1d9e1;
+  background: #282828;
+  color: #ddd;
+}
+.highlight .code .tag,
+.highlight .code .keyword,
+.highlight .code .selector-tag,
+.highlight .code .literal,
+.highlight .code .strong,
+.highlight .code .name {
+  color: #fb4934;
+}
+.highlight .code .code {
+  color: #458588;
+}
+.highlight .code .class .title {
+  color: #83a598;
+}
+.highlight .code .attribute,
+.highlight .code .symbol,
+.highlight .code .regexp,
+.highlight .code .link {
+  color: #458588;
+}
+.highlight .code .string,
+.highlight .code .bullet,
+.highlight .code .subst,
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .emphasis,
+.highlight .code .type,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .selector-attr,
+.highlight .code .selector-pseudo,
+.highlight .code .addition,
+.highlight .code .variable,
+.highlight .code .template-tag,
+.highlight .code .template-variable {
+  color: #b8bb26;
 }
 .highlight .code .comment,
-.highlight .code .quote {
-  color: #969896;
-  font-style: italic;
+.highlight .code .quote,
+.highlight .code .deletion,
+.highlight .code .meta {
+  color: #a89984;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag,
 .highlight .code .literal,
-.highlight .code .type,
-.highlight .code .addition {
-  color: #c9c;
-}
-.highlight .code .number,
-.highlight .code .selector-attr,
-.highlight .code .selector-pseudo {
-  color: #f99157;
-}
-.highlight .code .string,
 .highlight .code .doctag,
-.highlight .code .regexp {
-  color: #8abeb7;
-}
 .highlight .code .title,
-.highlight .code .name,
 .highlight .code .section,
-.highlight .code .built_in {
-  color: #b5bd68;
-}
-.highlight .code .variable,
-.highlight .code .template-variable,
-.highlight .code .selector-id,
-.highlight .code .class .title {
-  color: #fc6;
-}
-.highlight .code .section,
-.highlight .code .name,
-.highlight .code .strong {
+.highlight .code .type,
+.highlight .code .selector-id {
   font-weight: bold;
 }
-.highlight .code .symbol,
-.highlight .code .bullet,
-.highlight .code .subst,
-.highlight .code .meta,
-.highlight .code .link {
-  color: #f99157;
+.highlight .code .number {
+  color: #b16286;
 }
-.highlight .code .deletion {
-  color: #dc322f;
-}
-.highlight .code .formula {
-  background: #eee8d5;
-}
-.highlight .code .attr,
-.highlight .code .attribute {
-  color: #81a2be;
-}
-.highlight .code .emphasis {
-  font-style: italic;
+.highlight .code .operator {
+  color: #fe8019;
 }
 pre {
   overflow-x: auto;
