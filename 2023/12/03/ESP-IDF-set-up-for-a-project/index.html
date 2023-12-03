@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="My SetupI’ve chosen CLion as my weapon of choice for this project, thanks to its slick built-in MISRA C support (we’ll dig into that later). Currently, I’m cruising on my Dell G15 5515 Ryzen edition,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day1:-ESP-IDF set up for a project">
+<meta property="og:url" content="http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/index.html">
+<meta property="og:site_name" content="Dev&#39;s Blog">
+<meta property="og:description" content="My SetupI’ve chosen CLion as my weapon of choice for this project, thanks to its slick built-in MISRA C support (we’ll dig into that later). Currently, I’m cruising on my Dell G15 5515 Ryzen edition,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-03T12:14:43.000Z">
+<meta property="article:modified_time" content="2023-12-03T15:01:13.999Z">
+<meta property="article:author" content="Dev Manek">
+<meta property="article:tag" content="blog,dev,technology">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/project/images/dev-logo.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/project/images/dev-logo.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/project/images/dev-logo.png">
+        
+      
+    
+    <!-- title -->
+    <title>Day1:-ESP-IDF set up for a project</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/project/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/project/">Home</a></li><!--
+     --><!--
+       --><li><a href="/project/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/project/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
+     --><!--
+       --><li><a href="/project/cv/CVDevManek.pdf">CV</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Setup"><span class="toc-number">1.</span> <span class="toc-text">My Setup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starting-Fresh-with-ESP-IDF"><span class="toc-number">2.</span> <span class="toc-text">Starting Fresh with ESP-IDF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-the-Project-on-Track"><span class="toc-number">3.</span> <span class="toc-text">Getting the Project on Track</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-Test-with-Bluetooth"><span class="toc-number">4.</span> <span class="toc-text">Some Test with Bluetooth</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bluetooth-Testing-and-ESP32-C6-Quirk"><span class="toc-number">4.1.</span> <span class="toc-text">Bluetooth Testing and ESP32-C6 Quirk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#More-dumb-dev-moments"><span class="toc-number">4.2.</span> <span class="toc-text">More dumb dev moments</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Day1:-ESP-IDF set up for a project
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Dev Manek</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-03T12:14:43.000Z" class="dt-published" itemprop="datePublished">2023-12-03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="My-Setup"><a href="#My-Setup" class="headerlink" title="My Setup"></a>My Setup</h2><p>I’ve chosen CLion as my weapon of choice for this project, thanks to its slick built-in MISRA C support (we’ll dig into that later). Currently, I’m cruising on my Dell G15 5515 Ryzen edition, running a dual-boot setup with Windows 11 and Ubuntu 22.04 LTS. (Yep, I’ve played with Arch, but no way am I sacrificing ROS for it!) </p>
+<h2 id="Starting-Fresh-with-ESP-IDF"><a href="#Starting-Fresh-with-ESP-IDF" class="headerlink" title="Starting Fresh with ESP-IDF"></a>Starting Fresh with ESP-IDF</h2><p>I began by installing ESP-IDF from scratch. Everything seemed fine until I tried to install the specific esp32-c6 version. The compiler didn’t find ‘xtensa-esp32-elf-gcc’, which was weird for a fresh install.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">CMake</span> <span class="title class_">Error</span> at /home/thedevmanek/esp/esp-idf/tools/cmake/project.<span class="symbol">cmake:</span><span class="number">448</span> </span><br><span class="line">(__project)<span class="symbol">:The</span> <span class="variable constant_">CMAKE_C_COMPILER</span><span class="symbol">:xtensa-esp32-elf-gcc</span></span><br></pre></td></tr></table></figure>
+
+<p>To fix this, I reinstalled ESP-IDF without specifying the chip version, and that worked like a charm. I ran the “hello-world” example, and yay, it worked!</p>
+<h2 id="Getting-the-Project-on-Track"><a href="#Getting-the-Project-on-Track" class="headerlink" title="Getting the Project on Track"></a>Getting the Project on Track</h2><p>I believe in starting a project right, and that means having a solid <a target="_blank" rel="noopener" href="https://github.com/thedevmanek/assistive-shoulder-firmware/blob/main/README.md">README.md</a>. I goofed a bit during a pull request (PR) – didn’t do the squash and merge thing 😭. No worries, though. I fixed it by reverting, adding a note about squash and merge in the README, and finally merging the PR.</p>
+<p>Now, let’s talk security for PRs. I added some important stuff:</p>
+<ul>
+<li><strong>Only Verified Commits Allowed:</strong> Making sure each commit is legit.</li>
+<li><strong>Need at Least 1 Review to Merge:</strong> Double-checking things with another set of eyes.</li>
+<li><strong>Sort Out Comments Before Merging:</strong> Making sure all comments are resolved before the merge happens.</li>
+</ul>
+<p>These steps might sound like a lot, but they’re just my way of making sure our project stays strong and secure.</p>
+<p>Whenever I start a new project on GitHub, I make it a point to create a fresh file in the Projects folder. This little step goes a long way in keeping things organized. It’s like having a virtual whiteboard where I jot down features and track progress. Plus, it acts as a public commitment, showing that I’m all in for the success of the project. It’s my way of saying, “Hey world, here’s what we’re working on, and we’re committed to making it awesome!” 🚀</p>
+<h2 id="Some-Test-with-Bluetooth"><a href="#Some-Test-with-Bluetooth" class="headerlink" title="Some Test with Bluetooth"></a>Some Test with Bluetooth</h2><h3 id="Bluetooth-Testing-and-ESP32-C6-Quirk"><a href="#Bluetooth-Testing-and-ESP32-C6-Quirk" class="headerlink" title="Bluetooth Testing and ESP32-C6 Quirk"></a>Bluetooth Testing and ESP32-C6 Quirk</h3><blockquote>
+<p>Pro tip: Stick to examples from the esp-idf installation folder. It’s a good shield against the notorious big breaking changes. And hey, consider using the LTS version for a smoother ride – fewer surprises, fewer changes to handle.</p>
+</blockquote>
+<p>I ran some Bluetooth tests to ensure everything was smooth, but here’s the catch: ESP32-C6 doesn’t work with Bluetooth classic; it only supports BLE. Save yourself from potential debugging headaches like this.</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undefined reference <span class="keyword">to</span> `esp_ble_gap_start_advertising<span class="comment">&#x27;</span></span><br><span class="line"><span class="symbol">collect2:</span> <span class="keyword">error</span>: ld returned <span class="number">1</span> <span class="keyword">exit</span> status</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Quick tip: Always check the board compatibility info in the examples. The Espressif folks graciously provide this. Don’t end up being a 🤡 like me!</p>
+</blockquote>
+<h3 id="More-dumb-dev-moments"><a href="#More-dumb-dev-moments" class="headerlink" title="More dumb dev moments"></a>More dumb dev moments</h3><p>So, after ghosting ESP-IDF for a good two months, my lack of practice really hit me hard! Tried compiling my project and bam, two things I totally spaced on.</p>
+<p>First off, this line will make your life hell if you ignore it!Newer ESP-IDF versions politely nudge you about it but try to be a good human.</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REQUIRES esp_wifi bt esp_hid driver</span><br></pre></td></tr></table></figure>
+<p>Don’t forget to throw in all your source files. I didn’t, and let me tell you, it led to some serious pondering about life choices. Just trust me on this one:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SRCS <span class="string">&quot;bluetooth-controller.c&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Oh, and one more thing – check that your <code>#include</code> game is strong, and in your main folder’s CMakeLists, shout out the name of your component like:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REQUIRES bluetooth-controller</span><br></pre></td></tr></table></figure>
+
+<p>What’s a component, you ask? I’ll spill the beans in the next blog post. But first, coffee ☕️ and then time to get back to the grind!<br>PS:-I just got a new domain from <a target="_blank" rel="noopener" href="https://porkbun.com/">porkbun</a> for just £7.6 a year so check them out ig?</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/project/">Home</a></li>
+        
+          <li><a href="/project/about/">About</a></li>
+        
+          <li><a href="/project/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li>
+        
+          <li><a href="/project/cv/CVDevManek.pdf">CV</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Setup"><span class="toc-number">1.</span> <span class="toc-text">My Setup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starting-Fresh-with-ESP-IDF"><span class="toc-number">2.</span> <span class="toc-text">Starting Fresh with ESP-IDF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-the-Project-on-Track"><span class="toc-number">3.</span> <span class="toc-text">Getting the Project on Track</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-Test-with-Bluetooth"><span class="toc-number">4.</span> <span class="toc-text">Some Test with Bluetooth</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bluetooth-Testing-and-ESP32-C6-Quirk"><span class="toc-number">4.1.</span> <span class="toc-text">Bluetooth Testing and ESP32-C6 Quirk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#More-dumb-dev-moments"><span class="toc-number">4.2.</span> <span class="toc-text">More dumb dev moments</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&text=Day1:-ESP-IDF set up for a project"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&is_video=false&description=Day1:-ESP-IDF set up for a project"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Day1:-ESP-IDF set up for a project&body=Check out this article: http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&title=Day1:-ESP-IDF set up for a project"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&name=Day1:-ESP-IDF set up for a project&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://thedevmanek.com/project/2023/12/03/ESP-IDF-set-up-for-a-project/&t=Day1:-ESP-IDF set up for a project"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2023
+    Dev Manek
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/project/">Home</a></li><!--
+     --><!--
+       --><li><a href="/project/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/project/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
+     --><!--
+       --><li><a href="/project/cv/CVDevManek.pdf">CV</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/project/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
