@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: 18px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +428,7 @@ body th {
   border-bottom: 1px dashed #908d8d;
   color: #eee;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 19px;
 }
 body td {
   padding: 0 8px;
@@ -481,7 +481,7 @@ body {
   background-color: #1d1f21;
   color: #c9cacc;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -620,8 +620,6 @@ body {
   border-radius: 5px;
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
 }
 #header #nav {
   color: #2bbc8a;
@@ -662,10 +660,6 @@ body {
 }
 #header #nav ul li:last-child a {
   margin-right: 0;
-}
-#header:hover #logo {
-  filter: none;
-  -webkit-filter: none;
 }
 @media screen and (max-width: 480px) {
   #header #title {
@@ -850,7 +844,7 @@ body {
 }
 #header-post #toc .toc-level-2:before {
   color: #2bbc8a;
-  content: "#";
+  content: "";
 }
 #header-post #toc .toc-level-3 {
   color: #908d8d;
@@ -1030,7 +1024,7 @@ body {
 }
 #footer-post #toc-footer .toc-level-2:before {
   color: #2bbc8a;
-  content: "#";
+  content: "";
 }
 #footer-post #toc-footer .toc-level-3 {
   color: #908d8d;
@@ -1116,9 +1110,15 @@ article .content h2:before {
   top: -4px;
   left: -1rem;
   color: #2bbc8a;
-  content: "#";
+  content: "";
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
+}
+article .content h2 {
+  font-size: 1.7rem;
+}
+article .content h3 {
+  font-size: 1.3rem;
 }
 article .content img,
 article .content video {
@@ -1212,7 +1212,7 @@ article .content .caption {
   background-repeat: repeat-x;
 }
 .article-tag .tag-link:before {
-  content: "#";
+  content: "";
 }
 .article-category .category-link {
   background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
@@ -1415,7 +1415,7 @@ article .content .caption {
   color: #1d1f21;
   font-display: swap;
   font-weight: 400;
-  font-size: 11.200000000000001px;
+  font-size: 16px;
   font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
