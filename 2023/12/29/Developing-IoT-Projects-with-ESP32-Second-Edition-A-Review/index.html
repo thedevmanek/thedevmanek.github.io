@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Disclaimer: I have been contacted by Maran Fernandes to share my genuine feedback on the book “Developing IoT Projects with ESP32-Second Edition.” It is important to note that my review is entirely i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Developing IoT Projects with ESP32-Second Edition:A Review">
+<meta property="og:url" content="https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/index.html">
+<meta property="og:site_name" content="Dev&#39;s Blog">
+<meta property="og:description" content="Disclaimer: I have been contacted by Maran Fernandes to share my genuine feedback on the book “Developing IoT Projects with ESP32-Second Edition.” It is important to note that my review is entirely i">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-29T18:16:00.000Z">
+<meta property="article:modified_time" content="2023-12-29T19:05:05.813Z">
+<meta property="article:author" content="Dev Manek">
+<meta property="article:tag" content="esp32,book review">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/dev-logo.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/dev-logo.ico" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/dev-logo.ico">
+        
+      
+    
+    <!-- title -->
+    <title>Developing IoT Projects with ESP32-Second Edition:A Review</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C9RHLJF50"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9C9RHLJF50');
+  </script>
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Dev's Blog" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
+     --><!--
+       --><li><a href="/cv/CV.pdf">CV</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/12/05/ESP-IDF-Messing-around-with-nimble-BLE-peripheral/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&text=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&is_video=false&description=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Developing IoT Projects with ESP32-Second Edition:A Review&body=Check out this article: https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&name=Developing IoT Projects with ESP32-Second Edition:A Review&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&t=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#An-Overview"><span class="toc-number">1.</span> <span class="toc-text">An Overview:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Review"><span class="toc-number">2.</span> <span class="toc-text">The Review</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Dilemma-of-Target-Audience-%F0%9F%91%A5"><span class="toc-number">2.1.</span> <span class="toc-text">The Dilemma of Target Audience 👥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Unique-Programming-Language-Choice-%F0%9F%92%BB"><span class="toc-number">2.2.</span> <span class="toc-text">A Unique Programming Language Choice 💻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Exponential-Curve-%F0%9F%93%88"><span class="toc-number">2.3.</span> <span class="toc-text">The Exponential Curve 📈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Managing-Expectations"><span class="toc-number">2.4.</span> <span class="toc-text">Managing Expectations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet-Part-%E2%98%81"><span class="toc-number">2.5.</span> <span class="toc-text">The Internet Part ☁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hardware-Requirements-%F0%9F%94%8C"><span class="toc-number">2.6.</span> <span class="toc-text">Hardware Requirements 🔌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Book-Design-%F0%9F%8E%AF"><span class="toc-number">2.7.</span> <span class="toc-text">Book Design 🎯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Holding-Hands-%F0%9F%A4%9D"><span class="toc-number">2.8.</span> <span class="toc-text">Holding Hands 🤝</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Final-Words"><span class="toc-number">3.</span> <span class="toc-text">Final Words</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Where-to-buy"><span class="toc-number">4.</span> <span class="toc-text">Where to buy?</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Developing IoT Projects with ESP32-Second Edition:A Review
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Dev Manek</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-29T18:16:00.000Z" class="dt-published" itemprop="datePublished">2023-12-29</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/esp32-book-review/" rel="tag">esp32,book review</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <blockquote>
+<p>Disclaimer: I have been contacted by Maran Fernandes to share my genuine feedback on the book “Developing IoT Projects with ESP32-Second Edition.” It is important to note that my review is entirely independent, and I want to emphasize that I have not been influenced by Mr. Fernandes or his team to provide a biased assessment. The thoughts and comments expressed in this blog post are solely my own, and my goal is to offer insights to the best of my ability. Cheers! 🍻</p>
+</blockquote>
+<h1 id="An-Overview"><a href="#An-Overview" class="headerlink" title="An Overview:"></a>An Overview:</h1><p>Upon delving into the initial pages, I swiftly grasped the book’s overarching objective. It endeavors to explore the IoT ecosystem through diverse examples, skillfully balancing practical applications with essential theoretical underpinnings. Each chapter seamlessly commences with fundamental theories, key concepts, or a project blueprint, seamlessly transitioning to the practical implementation through code.</p>
+<h1 id="The-Review"><a href="#The-Review" class="headerlink" title="The Review"></a>The Review</h1><p>The book presents itself as not the bible for ESP32 but a support that can be used to understand and implement various examples to display robustness of ESP32 based systems and ESP-IDF.However it comes with some caveats which I found might hamper the reading experience or provide a different potrayel of IoT based systems.</p>
+<h2 id="The-Dilemma-of-Target-Audience-👥"><a href="#The-Dilemma-of-Target-Audience-👥" class="headerlink" title="The Dilemma of Target Audience 👥"></a>The Dilemma of Target Audience 👥</h2><p>This book is not tailored for absolute beginners or hobbyists; both may find the substantial amount of code and theoretical content challenging, especially if they lack prior experience with electronics or object-oriented programming (OOP). While the book doesn’t explicitly position itself for novices, it remains firmly rooted in the technical aspects of IoT, providing extensive insights into using PlatformIO and ESP-IDF.</p>
+<h2 id="A-Unique-Programming-Language-Choice-💻"><a href="#A-Unique-Programming-Language-Choice-💻" class="headerlink" title="A Unique Programming Language Choice 💻"></a>A Unique Programming Language Choice 💻</h2><p>Rather than utilizing Arduino C++ or MISRA C, the book adopts a robust C++-based system for ESP-IDF. While this language choice may initially surprise readers, a deeper exploration in later chapters reveals its purpose—to maintain consistency with libraries and leverage object-oriented programming for enhanced code modularity. The initial hesitation I felt was quickly overcome as the rationale became apparent.</p>
+<h2 id="The-Exponential-Curve-📈"><a href="#The-Exponential-Curve-📈" class="headerlink" title="The Exponential Curve 📈"></a>The Exponential Curve 📈</h2><p>The book sets a deliberate pace in the first and second chapters, gradually intensifying in the third. While it attempts to sustain this momentum, the need to cover substantial content in smaller chapters presents a challenge. Keeping up with the increasing complexity may become demanding in the later chapters.</p>
+<h2 id="Managing-Expectations"><a href="#Managing-Expectations" class="headerlink" title="Managing Expectations"></a>Managing Expectations</h2><p>Prospective buyers should not expect exhaustive coverage of ESP-IDF and IoT; disappointment awaits those seeking comprehensive insights. The book serves as a tool to reinforce prior knowledge of IoT systems and C++, facilitating the creation of practical, real-life projects that can serve as a foundation for future endeavors.</p>
+<h2 id="The-Internet-Part-☁"><a href="#The-Internet-Part-☁" class="headerlink" title="The Internet Part ☁"></a>The Internet Part ☁</h2><p>Despite the title’s emphasis on the Internet aspect of IoT, the book remains narrowly focused on IoT concepts, omitting coverage of Bluetooth, Zigbee, and other essential protocols. While the decision to maintain focus is understood, a brief introduction to these technologies could have added valuable context.</p>
+<h2 id="Hardware-Requirements-🔌"><a href="#Hardware-Requirements-🔌" class="headerlink" title="Hardware Requirements 🔌"></a>Hardware Requirements 🔌</h2><p>To follow along, readers are required to invest at least $80 in hardware. Despite potential backlash, I commend the authors for this decision, as adequate hardware is essential for a meaningful learning experience. Taking a firm stand on this ensures readers gain practical insights from the book.</p>
+<h2 id="Book-Design-🎯"><a href="#Book-Design-🎯" class="headerlink" title="Book Design 🎯"></a>Book Design 🎯</h2><p>The book employs a unique design, delving into theory, hardware, software, and troubleshooting in each chapter. While the first three aspects are adequately covered, troubleshooting is addressed in a chapter-specific manner. Given that troubleshooting is integral to IoT, a more comprehensive approach in helping readers understand and overcome failures would be beneficial.</p>
+<h2 id="Holding-Hands-🤝"><a href="#Holding-Hands-🤝" class="headerlink" title="Holding Hands 🤝"></a>Holding Hands 🤝</h2><p>The book adopts a guiding approach, holding readers’ hands through each step. While this may enhance reader satisfaction, it could hinder true learning, as some readers may resort to copying code without fully grasping the concepts. The increasing pace in later chapters may result in reader frustration and potential abandonment.</p>
+<h1 id="Final-Words"><a href="#Final-Words" class="headerlink" title="Final Words"></a>Final Words</h1><p>Despite its caveats, the book effectively achieves its intended goals, offering a comprehensive exploration of TinyML and Edge Computing concepts. I wholeheartedly recommend it as a must-read for individuals keen on IoT, possessing a good-enough programming background. Even those already entrenched in the industry may find this book surprising, thanks to its distinctive approach to programming and insightful explanations of various libraries. The author’s wealth of experiences contributes significantly to making this book a compelling and enriching read.</p>
+<h1 id="Where-to-buy"><a href="#Where-to-buy" class="headerlink" title="Where to buy?"></a>Where to buy?</h1><p>You can buy this book on the Packt website and</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li>
+        
+          <li><a href="/cv/CV.pdf">CV</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#An-Overview"><span class="toc-number">1.</span> <span class="toc-text">An Overview:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Review"><span class="toc-number">2.</span> <span class="toc-text">The Review</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Dilemma-of-Target-Audience-%F0%9F%91%A5"><span class="toc-number">2.1.</span> <span class="toc-text">The Dilemma of Target Audience 👥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Unique-Programming-Language-Choice-%F0%9F%92%BB"><span class="toc-number">2.2.</span> <span class="toc-text">A Unique Programming Language Choice 💻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Exponential-Curve-%F0%9F%93%88"><span class="toc-number">2.3.</span> <span class="toc-text">The Exponential Curve 📈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Managing-Expectations"><span class="toc-number">2.4.</span> <span class="toc-text">Managing Expectations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet-Part-%E2%98%81"><span class="toc-number">2.5.</span> <span class="toc-text">The Internet Part ☁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hardware-Requirements-%F0%9F%94%8C"><span class="toc-number">2.6.</span> <span class="toc-text">Hardware Requirements 🔌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Book-Design-%F0%9F%8E%AF"><span class="toc-number">2.7.</span> <span class="toc-text">Book Design 🎯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Holding-Hands-%F0%9F%A4%9D"><span class="toc-number">2.8.</span> <span class="toc-text">Holding Hands 🤝</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Final-Words"><span class="toc-number">3.</span> <span class="toc-text">Final Words</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Where-to-buy"><span class="toc-number">4.</span> <span class="toc-text">Where to buy?</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&text=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&is_video=false&description=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Developing IoT Projects with ESP32-Second Edition:A Review&body=Check out this article: https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&title=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&name=Developing IoT Projects with ESP32-Second Edition:A Review&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://thedevmanek.com/2023/12/29/Developing-IoT-Projects-with-ESP32-Second-Edition-A-Review/&t=Developing IoT Projects with ESP32-Second Edition:A Review"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    Dev Manek
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/thedevmanek">Projects</a></li><!--
+     --><!--
+       --><li><a href="/cv/CV.pdf">CV</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
