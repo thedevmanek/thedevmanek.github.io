@@ -6,7 +6,7 @@
   <link href="https://thedevmanek.com/atom.xml" rel="self"/>
   
   <link href="https://thedevmanek.com/"/>
-  <updated>2024-01-04T12:52:17.821Z</updated>
+  <updated>2024-02-26T16:42:13.456Z</updated>
   <id>https://thedevmanek.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IMU for Dummies:- Introduction</title>
+    <link href="https://thedevmanek.com/2024/02/26/IMU-for-dummies-Part-I/"/>
+    <id>https://thedevmanek.com/2024/02/26/IMU-for-dummies-Part-I/</id>
+    <published>2024-02-26T11:27:50.000Z</published>
+    <updated>2024-02-26T16:42:13.456Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/../blog_images/IMUIntro.gif" alt="alt text"></p><h2 id="Why-am-I-writing-about-IMU"><a href="#Why-am-I-writing-about-IMU" class="headerlink" title="Why am I writing about IMU?"></a>Why am I writing about IMU?</h2><p>When it comes to Inertial Measurement Units (IMU), the conversation often splits between embedded developers and roboticists. However, I aim to bridge that gap by offering insights from both perspectives. In this series, we’ll delve into IMUs from both low-level and high-level angles, from understanding drivers to leveraging data for navigation systems.</p><h2 id="Understanding-IMU"><a href="#Understanding-IMU" class="headerlink" title="Understanding IMU"></a>Understanding IMU</h2><p>Inertial Measurement Unit or IMU is very common in robotics and I am sure you must have heard the name. But how important is it? It is said that before you start building a robot you order an IMU.<br>Well ok… but why?<br><img src="/../blog_images/Robot.gif" alt="Robot Navigation"><br>Tracking the motion of the robot is very important. Being accurate is one of the key requirements. To move a robot from point A to point B. You need to have the following information.</p><ul><li>Start point</li><li>Endpoint</li><li>Current position</li></ul><p>What IMU helps in is findnig the  current position of the Robot.<br>Seems easy right?<br>Plug in some rotary encoders and you are good to go!<br><em>Problem Solved!</em><br>Nope, having information from rotary encoders will just give you distance. Bigger problem is that that even if you have something like omni wheels from which you can also determnine direction. In real world things do not work as expected.<br><img src="/../blog_images/RobotDrift.gif" alt="alt text"></p><p>Although the wheels show you that it is moving towards the goal the robot has actually moved away from the path.</p><p>This is why IMU is used, to find the exact location of the robot in any given moment.</p><h2 id="Next-Part"><a href="#Next-Part" class="headerlink" title="Next Part"></a>Next Part</h2><p>In the next part I will talk about the basic components of an IMU and their limits. We will dive into datasheets.Next blog is going to be long so be prepared for it with a cuppa coffee and fresh mind.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../blog_images/IMUIntro.gif&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Why-am-I-writing-about-IMU&quot;&gt;&lt;a href=&quot;#Why-am-I-writing-about-IMU&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="esp32,imu" scheme="https://thedevmanek.com/tags/esp32-imu/"/>
+    
+  </entry>
   
   <entry>
     <title>Developing IoT Projects with ESP32-Second Edition:A Review</title>
