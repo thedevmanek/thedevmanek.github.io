@@ -6,7 +6,7 @@
   <link href="https://thedevmanek.com/atom.xml" rel="self"/>
   
   <link href="https://thedevmanek.com/"/>
-  <updated>2024-02-26T16:42:13.456Z</updated>
+  <updated>2024-03-05T14:45:29.925Z</updated>
   <id>https://thedevmanek.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IMU for dummies:- Basics Of IMU</title>
+    <link href="https://thedevmanek.com/2024/02/27/IMU-for-dummies-Basics-Of-IMU/"/>
+    <id>https://thedevmanek.com/2024/02/27/IMU-for-dummies-Basics-Of-IMU/</id>
+    <published>2024-02-27T16:06:43.000Z</published>
+    <updated>2024-03-05T14:45:29.925Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/../blog_images/IMUIntro2.gif" alt="alt text"></p><h2 id="What-does-an-IMU-consists-of"><a href="#What-does-an-IMU-consists-of" class="headerlink" title="What does an IMU consists of?"></a>What does an IMU consists of?</h2><p>An IMU comprises three major components:</p><ul><li>Accelerometer</li><li>Gyroscope</li><li>Magnetometer</li></ul><p>Each serves a specific purpose. To simplify, I’ll use the ICM-20948 IMU I’ve been working with to explain the function of each component. You can find the datasheet <a href="https://invensense.tdk.com/wp-content/uploads/2016/06/DS-000189-ICM-20948-v1.3.pdf">here</a></p><blockquote><p>  Note: This link might change with updates. Feel free to comment here, and I’ll update the blog.</p></blockquote><h3 id="Accelerometer"><a href="#Accelerometer" class="headerlink" title="Accelerometer"></a>Accelerometer</h3><p><img src="/../blog_images/accel.gif" alt="alt text"><br>Starting with the easiest component to understand, an accelerometer has mass that squeezes a piezoelectric material which in turn produces a charge proportional to the force. How? That will require a deeper dive into electronics.<br>The IMU gives acceleration in terms of F&#x3D;mg that is 1g,-2g etc. The information about the range will be given in the data sheet for example for ICM-20948 following ranges are possible 2g, ±4g, ±8g, and<br>±16g.<br><img src="/../blog_images/accel-config.png" alt="alt text"><br>You can select the desired range by saving a hexadecimal value inside the given register. We will see how to use these registers in upcoming blogs.<br>The Accelerometer will give you information on all three axes viz. X, Y and Z. Different IMUs store this information differently. For ICM-20948 here is how the information is stored in its registers.<br><img src="/../blog_images/accel-xout.png" alt="alt text"><br>A register can only store 8 bits but acceleration is stored in 16 bits thus we need two registers to get information about one particular axis.<br>We will see why this is the case and how to read values soon. I pinky promise.<br>Acceleration gives us information on the movement of the object in one direction. We have information about 3-DOF which is three degrees of freedom. Good but what about the other three, rotations? This is where a gyroscope comes into the picture.</p><h2 id="Gyroscope"><a href="#Gyroscope" class="headerlink" title="Gyroscope"></a>Gyroscope</h2><p><img src="/../blog_images/gyro.gif" alt="alt text"></p><p>A gyroscope provides the rate of rotation and angular position. How does it work though?<br>It is measured by fetching the value of Coriolis force. There are two masses suspended and they move in opposite directions. When a rotation is applied one mass moves up while the other mass moves down as seen in the animation.<br>The difference in the forces helps to calculate the angular velocity.<br>The information is stored similarly to the acceleration values. The registers have the following ranges ±250 dps, ±500 dps, ±1000 dps, and ±2000 dps. dps represents degrees per second.<br><img src="/../blog_images/gyro-config.png" alt="alt text"><br>The gyroscope stores the values of the rotation of the X, Y and Z axes in the same 16-bit format.<br><img src="/../blog_images/gyro-yout.png" alt="alt text"><br>You must have observed the term Gyro_Sensitivity. We will talk about this term when we are coding the driver for this IMU.</p><h2 id="Magnetometer"><a href="#Magnetometer" class="headerlink" title="Magnetometer"></a>Magnetometer</h2><p><img src="/../blog_images/magnet.gif" alt="alt text"><br>Wait how did this new component come into the picture. Don’t we have everything to get started? What else are we missing?<br>The information from Magnetometer is very specific to certain algorithms. Gyroscopes have something called zero drift. As the name suggests even when the IMU is stable one can observe a non-zero reading from gyroscopes and it can get worse over time. For Roll and Pitch zero drift can be eliminated by Accelerometer measurements. However, we need a Magnetometer to eliminate the zero drift in Yaw. </p><p>Magnetometer works on the concept of the hall effect where the particle is moved mechanically inside a coil using a piezoelectric actuator making electric current. A change in magnetic field causes a change in current.</p><p>Our ICM gives us the range of ±4900 μT, and T represents Tesla the unit for magnetic flux.<br>The register map is a bit different since the magnetometer is a different chip.<br><img src="/../blog_images/magnet-register.png" alt="alt text"></p><h1 id="What-is-next"><a href="#What-is-next" class="headerlink" title="What is next?"></a>What is next?</h1><p>Okay so now that we know what each component does we can start writing the driver and after that, we will use IMU on a robot! How awesome is that!</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../blog_images/IMUIntro2.gif&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;What-does-an-IMU-consists-of&quot;&gt;&lt;a href=&quot;#What-does-an-IMU-consists-of</summary>
+      
+    
+    
+    
+    
+    <category term="imu,robotics" scheme="https://thedevmanek.com/tags/imu-robotics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>IMU for Dummies:- Introduction</title>
     <link href="https://thedevmanek.com/2024/02/26/IMU-for-dummies-Part-I/"/>
     <id>https://thedevmanek.com/2024/02/26/IMU-for-dummies-Part-I/</id>
     <published>2024-02-26T11:27:50.000Z</published>
-    <updated>2024-02-26T16:42:13.456Z</updated>
+    <updated>2024-02-27T16:07:30.983Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/../blog_images/IMUIntro.gif" alt="alt text"></p><h2 id="Why-am-I-writing-about-IMU"><a href="#Why-am-I-writing-about-IMU" class="headerlink" title="Why am I writing about IMU?"></a>Why am I writing about IMU?</h2><p>When it comes to Inertial Measurement Units (IMU), the conversation often splits between embedded developers and roboticists. However, I aim to bridge that gap by offering insights from both perspectives. In this series, we’ll delve into IMUs from both low-level and high-level angles, from understanding drivers to leveraging data for navigation systems.</p><h2 id="Understanding-IMU"><a href="#Understanding-IMU" class="headerlink" title="Understanding IMU"></a>Understanding IMU</h2><p>Inertial Measurement Unit or IMU is very common in robotics and I am sure you must have heard the name. But how important is it? It is said that before you start building a robot you order an IMU.<br>Well ok… but why?<br><img src="/../blog_images/Robot.gif" alt="Robot Navigation"><br>Tracking the motion of the robot is very important. Being accurate is one of the key requirements. To move a robot from point A to point B. You need to have the following information.</p><ul><li>Start point</li><li>Endpoint</li><li>Current position</li></ul><p>What IMU helps in is findnig the  current position of the Robot.<br>Seems easy right?<br>Plug in some rotary encoders and you are good to go!<br><em>Problem Solved!</em><br>Nope, having information from rotary encoders will just give you distance. Bigger problem is that that even if you have something like omni wheels from which you can also determnine direction. In real world things do not work as expected.<br><img src="/../blog_images/RobotDrift.gif" alt="alt text"></p><p>Although the wheels show you that it is moving towards the goal the robot has actually moved away from the path.</p><p>This is why IMU is used, to find the exact location of the robot in any given moment.</p><h2 id="Next-Part"><a href="#Next-Part" class="headerlink" title="Next Part"></a>Next Part</h2><p>In the next part I will talk about the basic components of an IMU and their limits. We will dive into datasheets.Next blog is going to be long so be prepared for it with a cuppa coffee and fresh mind.</p>]]></content>
     
@@ -35,7 +58,7 @@
     
     
     
-    <category term="esp32,imu" scheme="https://thedevmanek.com/tags/esp32-imu/"/>
+    <category term="robotics,imu" scheme="https://thedevmanek.com/tags/robotics-imu/"/>
     
   </entry>
   
